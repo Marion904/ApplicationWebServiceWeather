@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ApplicationWebServiceWeather</string>
+    <string name="action_settings">Settings</string>
+    <string name="test">jiopjiopjiop</string>
+    <string name="api_key">fc87a3a56b71d943b294f5a9b14a25b3</string>
+    <string name="need_permission_toast">Tu dois autoriser la géoloc</string>
+    <string name="app_start_toast">Go tiger</string>
+    <string name="no_permission_toast">Pas de géoloc pas de météo</string>
+    <string name="echec">Problème!</string>
+    <string name="success">Go!</string>
+    <string name="forecast">Les prévisions sur les prochains jours :</string>
+    <string name="wind_speed">Vitesse du vent :</string>
+    <string name="intro">Tu es à</string>
+    <string name="forecast_1_day">Météo à 1 jour :</string>
+    <string name="forecast_2_day">Météo à 2 jours :</string>
+    <string name="forecast_3_day">Météo à 3 jours :</string>
+    <string name="forecast_4_day">Météo à 4 jours</string>
+    <string name="hPa">Pression atmosphérique :</string>
+    <string name="Temp">Température :</string>
+    <string name="metricUnit">°C,</string>
+    <string name="windSpeed">Vitesse du vent :</string>
+    <string name="windUnit">km/h</string>
+    <string name="pressureUnit">hPa,</string>
+</resources>
