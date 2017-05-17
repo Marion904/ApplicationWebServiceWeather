@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     private String key, currentRequestCacheKey, forecastRequestCacheKey;
     private TextView city, date, current_temp, current_temp2, current_weather, forecast_weather,forecast_weather1;
+    private ImageView icon;
     private CurrentWeatherRequest requestCurrent;
     private ForecastWeatherRequest requestForecast;
     private ProgressDialog progressDialog;
     protected SpiceManager spiceManager;
+    private DownloadImage weatherIcon;
     LocationManager locationManager = null;
     String locationProvider = LocationManager.NETWORK_PROVIDER;
     final int MY_PERMISSION_ACCESS_LOCATION = 1234;
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         current_weather=(TextView) findViewById(R.id.current_weather);
         forecast_weather =(TextView) findViewById(R.id.forecast_weather);
         forecast_weather1 =(TextView) findViewById(R.id.forecast_weather1);
+        icon = (ImageView) findViewById(R.id.icon);
 
 
 
@@ -172,6 +176,14 @@ public class MainActivity extends AppCompatActivity {
             Double temp = currentWeather.getMain().getTemp();
             Wind curWind = currentWeather.getWind();
             String desc = currentWeather.getWeather().get(0).getDescription();
+            StringBuilder iconBuilder = new StringBuilder();
+            iconBuilder.append(getString(R.string.icon_adress));
+            iconBuilder.append(currentWeather.getWeather().get(0).getIcon());
+            iconBuilder.append(getString(R.string.png_extension));
+            String urlIcon = iconBuilder.toString();
+            weatherIcon= new DownloadImage(icon);
+            weatherIcon.execute(urlIcon);
+
             long day = currentWeather.getDt();
             Date today = new Date(day * 1000);
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.FRANCE);

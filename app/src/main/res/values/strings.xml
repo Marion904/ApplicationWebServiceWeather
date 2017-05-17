@@ -21,4 +21,6 @@
     <string name="windSpeed">Vitesse du vent :</string>
     <string name="windUnit">km/h</string>
     <string name="pressureUnit">hPa,</string>
+    <string name="icon_adress">http://openweathermap.org/img/w/</string>
+    <string name="png_extension">.png</string>
 </resources>
